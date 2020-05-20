@@ -1,20 +1,32 @@
 import React, { Component } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
+import { AppBar, Toolbar, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import Layout, { Root, getHeader } from "@mui-treasury/layout";
+import styled from "styled-components";
+
+const scheme = Layout();
+
+scheme.configureHeader((builder) => {
+  builder.registerConfig("xs", {
+    position: "fixed",
+    clipped: true,
+    initialHeight: 64,
+  });
+});
+
+const Header = getHeader(styled);
 
 function NavBar() {
   return (
-    <div>
-      <AppBar position="static">
+    <Root scheme={scheme}>
+      <Header>
         <Toolbar variant="dense">
           <IconButton edge="start" color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
         </Toolbar>
-      </AppBar>
-    </div>
+      </Header>
+    </Root>
   );
 }
 
