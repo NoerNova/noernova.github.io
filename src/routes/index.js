@@ -10,18 +10,16 @@ import { About, Home, Posts, Project, NotFoundPage } from "../pages";
 
 function Routes() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/home">
-          <Redirect to="/" />
-        </Route>
-        <Route path="/about" component={About} />
-        <Route path="/posts" component={Posts} />
-        <Route path="/project" component={Project} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </Router>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/home">
+        <Redirect to="/" />
+      </Route>
+      <Route exact path="/about" component={About} />
+      <Route exact path="/posts" component={Posts} />
+      <Route exact path="/project" component={Project} />
+      <Route component={NotFoundPage} />
+    </Switch>
   );
 }
 

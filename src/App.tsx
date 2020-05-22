@@ -3,15 +3,7 @@ import "./App.scss";
 import Routes from "./routes";
 import NavBar from "./components/navbar";
 
-import MenuIcon from "@material-ui/icons/Menu";
-
-import {
-  Toolbar,
-  IconButton,
-  StylesProvider,
-  CssBaseline,
-  createMuiTheme,
-} from "@material-ui/core";
+import { StylesProvider, CssBaseline, createMuiTheme } from "@material-ui/core";
 import Layout, {
   Root,
   getHeader,
@@ -53,7 +45,7 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <StylesProvider injectFirst>
         <Root theme={theme} scheme={scheme}>
           <Routes />
