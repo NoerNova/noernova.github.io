@@ -1,8 +1,6 @@
 import React from "react";
-import "./App.scss";
 import Routes from "./routes";
 import NavBar from "./components/navbar";
-
 import { StylesProvider, CssBaseline, createMuiTheme } from "@material-ui/core";
 import Layout, {
   Root,
@@ -10,6 +8,7 @@ import Layout, {
   getDrawerSidebar,
 } from "@mui-treasury/layout";
 import styled from "styled-components";
+import SideBar from "./components/sidebar";
 
 const scheme = Layout();
 
@@ -27,8 +26,9 @@ scheme.configureEdgeSidebar((builder) => {
       anchor: "left",
     })
     .registerPermanentConfig("xs", {
-      width: 100,
-      collapsible: false,
+      width: 0,
+      collapsible: true,
+      collapsedWidth: 100,
     });
 });
 
@@ -54,7 +54,7 @@ function App() {
             <NavBar />
           </Header>
           <DrawsderSidebar sidebarId={"primarySidebar"}>
-            Sidebar
+            <SideBar />
           </DrawsderSidebar>
         </Root>
       </StylesProvider>
