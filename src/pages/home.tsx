@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../assets/images/logo.svg";
 import { getContent } from "@mui-treasury/layout";
+import useStyles from "../styles/pagesStyle";
 import styled, { keyframes } from "styled-components";
 
 const Content = getContent(styled);
@@ -10,22 +11,24 @@ function Home() {
   from {
     transform: rotate(0deg);
   }
-  ro {
+  to {
     transform: rotate(360deg);
   }
 `;
 
   const SpinIcon = styled.div`
-    height: 40vmin;
-    pointer-events: none;
     animation: ${rotate} 20s linear infinite;
   `;
 
+  const styles = useStyles();
+
   return (
     <Content>
-      <div className="App">
-        <header className="App-header">
-          <SpinIcon>{() => <img src={logo} alt="logo" />}</SpinIcon>
+      <div className={styles.root}>
+        <div className={styles.appHeader}>
+          <SpinIcon>
+            <img src={logo} className={styles.appLogo} alt="logo" />
+          </SpinIcon>
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -37,7 +40,7 @@ function Home() {
           >
             Learn React
           </a>
-        </header>
+        </div>
       </div>
     </Content>
   );

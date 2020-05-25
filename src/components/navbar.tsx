@@ -2,7 +2,7 @@ import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Toolbar, IconButton, Typography, AppBar } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import colors from "../themes/colors.js";
 import { getCollapseIcon } from "@mui-treasury/layout";
 import styled from "styled-components";
@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     menuButton: {
       marginRight: theme.spacing(2),
+    },
+    logoIcon: {
+      textDecoration: "none",
+      color: "inherit",
     },
     title: {
       flexGrow: 1,
@@ -46,7 +50,9 @@ function NavBar() {
             {() => <MenuIcon />}
           </CollapseIcon>
           <Typography variant="h6" className={classes.title}>
-            NoerNova
+            <Link to="/" className={classes.logoIcon}>
+              NoerNova
+            </Link>
           </Typography>
           <NavLink
             exact
