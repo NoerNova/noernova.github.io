@@ -1,48 +1,52 @@
 import React from "react";
-import logo from "../assets/images/logo.svg";
-import { getContent } from "@mui-treasury/layout";
-import useStyles from "../styles/pagesStyle";
-import styled, { keyframes } from "styled-components";
-
-const Content = getContent(styled);
+import {
+  Reset,
+  FullScreen,
+  NameTitleContainer,
+  NameTitle,
+  Gradient,
+  BackgroundImage,
+  Description,
+  SocialContainer,
+  Social,
+  Split,
+} from "../styles/homeStyle";
 
 function Home() {
-  const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-  const SpinIcon = styled.div`
-    animation: ${rotate} 20s linear infinite;
-  `;
-
-  const styles = useStyles();
-
   return (
-    <Content>
-      <div className={styles.root}>
-        <div className={styles.appHeader}>
-          <SpinIcon>
-            <img src={logo} className={styles.appLogo} alt="logo" />
-          </SpinIcon>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
+    <>
+      <Reset />
+      <FullScreen>
+        <BackgroundImage />
+        <NameTitleContainer>
+          <NameTitle>NorhsangPha</NameTitle>
+          <Description>A Developer and Musician</Description>
+        </NameTitleContainer>
+        <SocialContainer>
+          <Social href="https://www.facebook.com/noe.mtai" target="_blank">
+            f
+          </Social>
+          <Split>·</Split>
+          <Social
+            href="https://www.instagram.com/b.norhsangpha/"
             target="_blank"
-            rel="noopener noreferrer"
           >
-            Learn React
-          </a>
-        </div>
-      </div>
-    </Content>
+            ig
+          </Social>
+          <Split>·</Split>
+          <Social href="https://twitter.com/noer_nova" target="_blank">
+            t
+          </Social>
+          <Split>·</Split>
+          <Social
+            href="https://www.linkedin.com/in/norhsangpha/"
+            target="_blank"
+          >
+            in
+          </Social>
+        </SocialContainer>
+      </FullScreen>
+    </>
   );
 }
 

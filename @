@@ -1,0 +1,25 @@
+" Press ? for help
+
+.. (up a dir)
+</noernova_portfolio/
+▸ [  ]node_modules/
+▸ [  ]public/
+▾ [  ]src/
+  ▸ [  ]assets/
+  ▸ [  ]components/
+  ▸ [  ]pages/
+  ▸ [  ]routes/
+  ▸ [  ]styles/
+  ▸ [  ]themes/
+    [  ]App.test.js
+    [  ]App.tsx
+    [  ]index.css
+    [  ]index.js
+    [  ]react-app-env.d.ts
+    [  ]serviceWorker.js
+    [  ]setupTests.js
+  [  ]package.json
+  [  ]README.md
+  [  ]tsconfig.json
+  [  ]yarn-error.log
+  [  ]yarn.lock

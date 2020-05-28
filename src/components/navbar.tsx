@@ -1,6 +1,6 @@
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
-import { Toolbar, IconButton, Typography, AppBar } from "@material-ui/core";
+import { Toolbar, Typography, AppBar, Hidden } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { NavLink, Link } from "react-router-dom";
 import colors from "../themes/colors.js";
@@ -11,21 +11,34 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      flex: 1,
     },
     menuButton: {
-      marginRight: theme.spacing(2),
+      transform: "rotate(-90deg)",
     },
     logoIcon: {
       textDecoration: "none",
-      color: "inherit",
+      color: colors.mainFontColors,
+      fontFamily: "NovaMono",
+      fontWeight: "normal",
+      fontSize: "1.8rem",
+      paddingLeft: "2rem",
     },
     title: {
       flexGrow: 1,
     },
+    navbarContainer: {
+      background: "transparent",
+      boxShadow: "none",
+      paddingTop: "1rem",
+      paddingRight: "2rem",
+    },
     navbarItem: {
       textDecoration: "none",
-      color: "inherit",
       padding: 16,
+      color: colors.mainFontColors,
+      fontFamily: "Helvetica",
+      fontSize: "1.2rem",
     },
     activeNavbar: {
       color: colors.activeColor,
@@ -43,46 +56,55 @@ function NavBar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
+    <div>
+      <AppBar className={classes.navbarContainer}>
         <Toolbar variant="dense">
-          <CollapseIcon sidebarId="primarySidebar" className={classes.collapse}>
-            {() => <MenuIcon />}
-          </CollapseIcon>
           <Typography variant="h6" className={classes.title}>
             <Link to="/" className={classes.logoIcon}>
-              NoerNova
+              n-o-v-a
             </Link>
           </Typography>
-          <NavLink
-            exact
-            to="/"
-            activeClassName={classes.activeNavbar}
-            className={classes.navbarItem}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/project"
-            activeClassName={classes.activeNavbar}
-            className={classes.navbarItem}
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            to="/posts"
-            activeClassName={classes.activeNavbar}
-            className={classes.navbarItem}
-          >
-            Posts
-          </NavLink>
-          <NavLink
-            to="/about"
-            activeClassName={classes.activeNavbar}
-            className={classes.navbarItem}
-          >
-            About
-          </NavLink>
+          <Hidden smDown>
+            <NavLink
+              exact
+              to="/"
+              activeClassName={classes.activeNavbar}
+              className={classes.navbarItem}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/project"
+              activeClassName={classes.activeNavbar}
+              className={classes.navbarItem}
+            >
+              Projects
+            </NavLink>
+            <NavLink
+              to="/posts"
+              activeClassName={classes.activeNavbar}
+              className={classes.navbarItem}
+            >
+              Posts
+            </NavLink>
+            <NavLink
+              to="/about"
+              activeClassName={classes.activeNavbar}
+              className={classes.navbarItem}
+            >
+              About
+            </NavLink>
+          </Hidden>
+          <Hidden mdUp>
+            <CollapseIcon
+              sidebarId="primarySidebar"
+              className={classes.collapse}
+            >
+              {() => (
+                <MenuIcon fontSize="large" className={classes.menuButton} />
+              )}
+            </CollapseIcon>
+          </Hidden>
         </Toolbar>
       </AppBar>
     </div>

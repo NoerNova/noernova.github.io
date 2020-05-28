@@ -23,7 +23,7 @@ scheme.configureHeader((builder) => {
 scheme.configureEdgeSidebar((builder) => {
   builder
     .create("primarySidebar", {
-      anchor: "left",
+      anchor: "right",
     })
     .registerPermanentConfig("xs", {
       width: 0,
