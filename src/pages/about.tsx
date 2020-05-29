@@ -1,21 +1,31 @@
 import React from "react";
-import useStyles from "../styles/pagesStyle";
-import { getContent } from "@mui-treasury/layout";
-import styled from "styled-components";
+import {
+  BackgroundImage,
+  ImageCorouselContainer,
+  Image,
+} from "../styles/aboutPageStyle";
+import photoP1 from "../assets/images/me1.jpg";
+import photoP2 from "../assets/images/me2.jpg";
+import photoP3 from "../assets/images/me3.jpg";
+import Carousel from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
 
-const Content = getContent(styled);
+const imageRender = () => {
+  let images: Array<string> = [photoP1, photoP2, photoP3];
+
+  return images.map((image) => <Image src={image} />);
+};
 
 function About() {
-  const styles = useStyles();
-
   return (
-    <Content>
-      <div className={styles.root}>
-        <div className={styles.appHeader}>
-          <h1>About</h1>
-        </div>
-      </div>
-    </Content>
+    <>
+      <BackgroundImage />
+      <ImageCorouselContainer>
+        <Carousel dots centered autoPlay={5000} animationSpeed={2000} infinite>
+          {imageRender()}
+        </Carousel>
+      </ImageCorouselContainer>
+    </>
   );
 }
 

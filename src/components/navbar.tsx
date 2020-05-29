@@ -14,6 +14,8 @@ import {
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { NavLink, Link } from "react-router-dom";
 import colors from "../themes/colors.js";
+import SocialLink from "../components/socialLink";
+import { SocialContainer } from "../styles/homeStyle";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -90,6 +92,11 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "1.5rem",
       color: `${colors.mainFontColors}`,
       "@media (min-width: 960px)": {
+        display: "none",
+      },
+    },
+    socialModalContainer: {
+      "@media (min-width: 960px) and (orientation: landscape)": {
         display: "none",
       },
     },
@@ -202,6 +209,9 @@ function NavBar() {
                   <CloseIcon className={classes.menuIcon} />
                 </IconButton>
                 <NavLinkItems />
+                <SocialContainer className={classes.socialModalContainer}>
+                  <SocialLink />
+                </SocialContainer>
               </div>
             </Fade>
           </Modal>

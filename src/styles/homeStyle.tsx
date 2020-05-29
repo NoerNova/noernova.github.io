@@ -80,26 +80,3 @@ export const SocialContainer = styled.div`
   justify-content: center;
   flex-direction: row;
 `;
-
-export const Social = styled.a`
-  font-family: "Kefa";
-  font-size: 2rem;
-  font-weight: normal;
-  color: ${colors.mainFontColors};
-  padding: 15px;
-  text-decoration: none;
-  @media (max-width: 960px) {
-    font-size: 1.6rem;
-  }
-`;
-
-export const Split = styled.p`
-  font-family: "Kefa";
-  font-size: 2rem;
-  font-weight: normal;
-  color: ${colors.mainFontColors};
-  padding: 2px;
-  @media (max-width: 960px) {
-    font-size: 1.6rem;
-  }
-`;
