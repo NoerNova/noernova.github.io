@@ -1,4 +1,3 @@
-import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import colors from "../themes/colors";
 import homeImg from "../assets/images/me_BW.jpg";
@@ -39,13 +38,23 @@ export const NameTitleContainer = styled.div`
   align-items: flex-end;
   justify-content: center;
   flex-direction: column;
+  @media (max-width: 960px) {
+    left: 50%;
+    top: 35%;
+  }
 `;
 
 export const NameTitle = styled.h1`
   font-family: "Helvetica";
-  font-size: 5.5rem;
+  font-size: 4.7rem;
   font-weight: normal;
   color: ${colors.mainFontColors};
+  @media (max-width: 960px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 370px) {
+    font-size: 2.8rem;
+  }
 `;
 
 export const Description = styled.p`
@@ -53,11 +62,17 @@ export const Description = styled.p`
   font-size: 1.8rem;
   font-weight: normal;
   color: ${colors.mainFontColors};
+  @media (max-width: 960px) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 370px) {
+    font-size: 1.1rem;
+  }
 `;
 
 export const SocialContainer = styled.div`
   position: absolute;
-  top: 80%;
+  top: 87%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   display: flex;
@@ -73,6 +88,9 @@ export const Social = styled.a`
   color: ${colors.mainFontColors};
   padding: 15px;
   text-decoration: none;
+  @media (max-width: 960px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const Split = styled.p`
@@ -81,4 +99,7 @@ export const Split = styled.p`
   font-weight: normal;
   color: ${colors.mainFontColors};
   padding: 2px;
+  @media (max-width: 960px) {
+    font-size: 1.6rem;
+  }
 `;

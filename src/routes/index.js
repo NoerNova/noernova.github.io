@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import { About, Home, Posts, Project, NotFoundPage } from "../pages";
+import { Home, About, Blogs, Works, Contact, NotFoundPage } from "../pages";
 
 function Routes() {
   return (
@@ -16,8 +16,9 @@ function Routes() {
         <Redirect to="/" />
       </Route>
       <Route exact path="/about" component={About} />
-      <Route exact path="/posts" component={Posts} />
-      <Route exact path="/project" component={Project} />
+      <Route exact path="/blogs" component={Blogs} />
+      <Route exact path="/works" component={Works} />
+      <Route exact path="/contact" component={Contact} />
       <Route component={NotFoundPage} />
     </Switch>
   );

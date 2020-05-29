@@ -7,7 +7,7 @@ import List from "../components/List";
 
 const Content = getContent(styled);
 
-function Project() {
+function Works() {
   const styles = useStyles();
   const [data, setData] = useState<Array<any>>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -58,4 +58,4 @@ function Project() {
   );
 }
 
-export default Project;
+export default Works;

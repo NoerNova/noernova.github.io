@@ -1,20 +1,38 @@
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
-import { Toolbar, Typography, AppBar, Hidden } from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
+import {
+  Toolbar,
+  Typography,
+  AppBar,
+  Hidden,
+  Modal,
+  Fade,
+  IconButton,
+  Backdrop,
+} from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { NavLink, Link } from "react-router-dom";
 import colors from "../themes/colors.js";
-import { getCollapseIcon } from "@mui-treasury/layout";
-import styled from "styled-components";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-      flex: 1,
+    },
+    menuIcon: {
+      transform: "rotate(-90deg)",
+      fontSize: "1.8rem",
+      color: colors.mainFontColors,
     },
     menuButton: {
-      transform: "rotate(-90deg)",
+      paddingLeft: -12,
+      marginRight: -15,
+    },
+    closeMenuButton: {
+      position: "absolute",
+      top: "2%",
+      right: "4%",
     },
     logoIcon: {
       textDecoration: "none",
@@ -22,7 +40,10 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "NovaMono",
       fontWeight: "normal",
       fontSize: "1.8rem",
-      paddingLeft: "2rem",
+      paddingLeft: "1rem",
+      "@media (max-width: 960px)": {
+        fontSize: "1.5rem",
+      },
     },
     title: {
       flexGrow: 1,
@@ -31,7 +52,7 @@ const useStyles = makeStyles((theme: Theme) =>
       background: "transparent",
       boxShadow: "none",
       paddingTop: "1rem",
-      paddingRight: "2rem",
+      paddingRight: "1rem",
     },
     navbarItem: {
       textDecoration: "none",
@@ -39,21 +60,100 @@ const useStyles = makeStyles((theme: Theme) =>
       color: colors.mainFontColors,
       fontFamily: "Helvetica",
       fontSize: "1.2rem",
+      "@media (max-width: 960px)": {
+        fontSize: "1.6rem",
+        fontFamily: "Kefa",
+        padding: 1,
+      },
     },
     activeNavbar: {
       color: colors.activeColor,
     },
-    collapse: {
-      paddingLeft: -12,
-      marginRight: 4,
+    modal: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    paper: {
+      backgroundColor: "#fff",
+      border: `2px solid ${colors.mainFontColors}`,
+      padding: theme.spacing(2, 4, 3),
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      width: "90%",
+      height: "95%",
+    },
+    navlinkItemsSplit: {
+      fontFamily: "Kefa",
+      fontSize: "1.5rem",
+      color: `${colors.mainFontColors}`,
+      "@media (min-width: 960px)": {
+        display: "none",
+      },
     },
   })
 );
 
-const CollapseIcon = getCollapseIcon(styled);
-
 function NavBar() {
   const classes = useStyles();
+  const [openModal, setOpenModal] = React.useState(false);
+
+  const handleModalOpen = () => {
+    setOpenModal(true);
+  };
+
+  const handleModalClose = () => {
+    setOpenModal(false);
+  };
+
+  const navLinkItemsSplit = () => (
+    <p className={classes.navlinkItemsSplit}>·</p>
+  );
+
+  const NavLinkItems = () => {
+    return (
+      <>
+        <NavLink
+          exact
+          to="/about"
+          activeClassName={classes.activeNavbar}
+          className={classes.navbarItem}
+          onClick={() => handleModalClose()}
+        >
+          About
+        </NavLink>
+        {navLinkItemsSplit()}
+        <NavLink
+          to="/blogs"
+          activeClassName={classes.activeNavbar}
+          className={classes.navbarItem}
+          onClick={() => handleModalClose()}
+        >
+          Blogs
+        </NavLink>
+        {navLinkItemsSplit()}
+        <NavLink
+          to="/works"
+          activeClassName={classes.activeNavbar}
+          className={classes.navbarItem}
+          onClick={() => handleModalClose()}
+        >
+          Works
+        </NavLink>
+        {navLinkItemsSplit()}
+        <NavLink
+          to="/contact"
+          activeClassName={classes.activeNavbar}
+          className={classes.navbarItem}
+          onClick={() => handleModalClose()}
+        >
+          Contact
+        </NavLink>
+      </>
+    );
+  };
 
   return (
     <div>
@@ -65,46 +165,46 @@ function NavBar() {
             </Link>
           </Typography>
           <Hidden smDown>
-            <NavLink
-              exact
-              to="/"
-              activeClassName={classes.activeNavbar}
-              className={classes.navbarItem}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/project"
-              activeClassName={classes.activeNavbar}
-              className={classes.navbarItem}
-            >
-              Projects
-            </NavLink>
-            <NavLink
-              to="/posts"
-              activeClassName={classes.activeNavbar}
-              className={classes.navbarItem}
-            >
-              Posts
-            </NavLink>
-            <NavLink
-              to="/about"
-              activeClassName={classes.activeNavbar}
-              className={classes.navbarItem}
-            >
-              About
-            </NavLink>
+            <NavLinkItems />
           </Hidden>
           <Hidden mdUp>
-            <CollapseIcon
-              sidebarId="primarySidebar"
-              className={classes.collapse}
+            <IconButton
+              className={classes.menuButton}
+              aria-label="more"
+              aria-controls="long-menu"
+              aria-haspopup="true"
+              onClick={handleModalOpen}
             >
-              {() => (
-                <MenuIcon fontSize="large" className={classes.menuButton} />
-              )}
-            </CollapseIcon>
+              <MenuIcon className={classes.menuIcon} />
+            </IconButton>
           </Hidden>
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-descriptns"
+            className={classes.modal}
+            open={openModal}
+            onClose={handleModalClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={openModal}>
+              <div className={classes.paper}>
+                <IconButton
+                  className={classes.closeMenuButton}
+                  aria-label="more"
+                  aria-controls="long-menu"
+                  aria-haspopup="true"
+                  onClick={handleModalClose}
+                >
+                  <CloseIcon className={classes.menuIcon} />
+                </IconButton>
+                <NavLinkItems />
+              </div>
+            </Fade>
+          </Modal>
         </Toolbar>
       </AppBar>
     </div>

@@ -5,18 +5,18 @@ import useStyles from "../styles/pagesStyle";
 
 const Content = getContent(styled);
 
-function Posts() {
+function Contact() {
   const styles = useStyles();
 
   return (
     <Content>
       <div className={styles.root}>
         <div className={styles.appHeader}>
-          <h1>Posts</h1>
+          <h1>Contact</h1>
         </div>
       </div>
     </Content>
   );
 }
 
-export default Posts;
+export default Contact;

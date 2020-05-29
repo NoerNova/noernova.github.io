@@ -2,13 +2,8 @@ import React from "react";
 import Routes from "./routes";
 import NavBar from "./components/navbar";
 import { StylesProvider, CssBaseline, createMuiTheme } from "@material-ui/core";
-import Layout, {
-  Root,
-  getHeader,
-  getDrawerSidebar,
-} from "@mui-treasury/layout";
+import Layout, { Root, getHeader } from "@mui-treasury/layout";
 import styled from "styled-components";
-import SideBar from "./components/sidebar";
 
 const scheme = Layout();
 
@@ -20,20 +15,7 @@ scheme.configureHeader((builder) => {
   });
 });
 
-scheme.configureEdgeSidebar((builder) => {
-  builder
-    .create("primarySidebar", {
-      anchor: "right",
-    })
-    .registerPermanentConfig("xs", {
-      width: 0,
-      collapsible: true,
-      collapsedWidth: 100,
-    });
-});
-
 const Header = getHeader(styled);
-const DrawsderSidebar = getDrawerSidebar(styled);
 
 const theme = createMuiTheme({
   palette: {
@@ -53,9 +35,6 @@ function App() {
           <Header>
             <NavBar />
           </Header>
-          <DrawsderSidebar sidebarId={"primarySidebar"}>
-            <SideBar />
-          </DrawsderSidebar>
         </Root>
       </StylesProvider>
     </div>
