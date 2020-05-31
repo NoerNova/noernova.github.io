@@ -7,41 +7,38 @@ export const AboutPageContainer = styled.div`
   height: 100%;
   margin-top: 5rem;
   background: ${colors.mainBackgroundColor};
+  @media (min-height: 1000px) {
+    margin-top: 7rem;
+  }
+  @media (min-width: 721px) {
+    position: absolute;
+    left: 0;
+  }
 `;
 
 export const Box = styled.div`
   background-color: rgb(231, 221, 213);
   position: absolute;
+  z-index: -1;
+  top: 0;
   height: 100%;
   width: 50%;
   left: 30%;
-  @media (max-width: 600px) {
+  @media (max-width: 720px) {
     left: 10%;
   }
-  @media (max-width: 360px) {
-    height: 120vh;
-  }
-`;
-
-export const BackgroundImage = styled.div`
-  background-image: url(${aboutBG});
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center right;
-  @media (max-width: 600px) {
-    background-repeat: repeat-y;
-    background-size: auto;
-  }
+  /* @media (max-width: 400px) {
+    height: 140vh;
+  } */
 `;
 
 export const ImageCorouselContainer = styled.div`
   position: absolute;
-  left: 150px;
-  top: 170px;
+  left: 12%;
+  top: 100px;
   width: 32%;
   flex-direction: column;
-  @media (max-width: 600px) {
+  @media (max-width: 720px) {
     position: relative;
     left: 0;
     top: 0;
@@ -50,43 +47,29 @@ export const ImageCorouselContainer = styled.div`
   }
 `;
 
-export const ImageGalleryContainer = styled.div`
-  /* root container */
-  .image-gallery {
-  }
-  /* image container */
-  .image-gallery-slides {
-  }
-  /* images class */
-  .image-gallery-image {
-  }
-  @media (max-width: 600px) {
-    .image-gallery {
-    }
-    .image-gallery-slides {
-    }
-    .image-gallery-image {
-    }
-  }
-`;
-
 export const AboutContentContainer = styled.div`
   position: relative;
   justify-content: center;
   margin-bottom: 5rem;
-  width: 50%;
+  width: 45%;
   left: 45%;
-  @media (max-width: 600px) {
+  @media (max-width: 720px) {
     position: absolute;
     justify-content: center;
     margin-top: 1rem;
     width: 90%;
     left: 5%;
   }
+  @media (min-width: 721px) {
+    left: 50%;
+    width: 45%;
+    top: 20%;
+  }
 `;
 
 export const AboutTitle = styled.h2`
   font-family: "NovaMono";
+  font-size: 2rem;
   color: ${colors.mainFontColors};
   padding: 10px;
   @media (max-width: 960px) {
@@ -96,5 +79,9 @@ export const AboutTitle = styled.h2`
 
 export const AboutContent = styled.p`
   font-family: "NovaMono";
+  font-size: 1.3rem;
   color: ${colors.mainFontColors};
+  @media (max-width: 960px) {
+    font-size: 1rem;
+  }
 `;

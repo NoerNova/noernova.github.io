@@ -1,6 +1,7 @@
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
+import HomeIcon from "@material-ui/icons/Home";
 import {
   Toolbar,
   Typography,
@@ -27,6 +28,10 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "1.8rem",
       color: colors.mainFontColors,
     },
+    homeIcon: {
+      fontSize: "2rem",
+      color: colors.mainFontColors,
+    },
     menuButton: {
       paddingLeft: -12,
       marginRight: -15,
@@ -35,6 +40,11 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "absolute",
       top: "2%",
       right: "4%",
+    },
+    homeMenuButton: {
+      position: "absolute",
+      top: "2%",
+      left: "4%",
     },
     logoIcon: {
       textDecoration: "none",
@@ -96,8 +106,11 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     socialModalContainer: {
-      "@media (min-width: 760px) and (orientation: landscape)": {
-        display: "none",
+      "@media (max-height: 550px)": {
+        visibility: "hidden",
+      },
+      "@media (min-width: 320px) and (orientation: landscape)": {
+        visibility: "hidden",
       },
     },
   })
@@ -123,7 +136,6 @@ function NavBar() {
     return (
       <>
         <NavLink
-          exact
           to="/about"
           activeClassName={classes.activeNavbar}
           className={classes.navbarItem}
@@ -207,6 +219,17 @@ function NavBar() {
                   onClick={handleModalClose}
                 >
                   <CloseIcon className={classes.menuIcon} />
+                </IconButton>
+                <IconButton
+                  className={classes.homeMenuButton}
+                  aria-label="home"
+                  aria-controls="long-menu"
+                  aria-haspopup="true"
+                  onClick={handleModalClose}
+                >
+                  <NavLink to="/" onClick={() => handleModalClose()}>
+                    <HomeIcon className={classes.homeIcon} />
+                  </NavLink>
                 </IconButton>
                 <NavLinkItems />
                 <SocialContainer className={classes.socialModalContainer}>

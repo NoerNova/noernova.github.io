@@ -2,9 +2,7 @@ import React from "react";
 import { Reset, FullScreen } from "../styles/homeStyle";
 import {
   Box,
-  BackgroundImage,
   ImageCorouselContainer,
-  ImageGalleryContainer,
   AboutContentContainer,
   AboutTitle,
   AboutContent,
@@ -16,6 +14,8 @@ import photoP3 from "../assets/images/me3.jpg";
 
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+
+import Container from "@material-ui/core/Container";
 
 const images = [
   {
@@ -32,31 +32,34 @@ const images = [
 function About() {
   return (
     <>
-      <AboutPageContainer>
-        <Box />
-        <ImageCorouselContainer>
-          <ImageGallery
-            items={images}
-            autoPlay
-            showThumbnails={false}
-            showFullscreenButton={false}
-            showNav={false}
-            showPlayButton={false}
-            showBullets
-          />
-        </ImageCorouselContainer>
-        <AboutContentContainer>
-          <AboutTitle>I me my mind ...</AboutTitle>
-          <AboutContent>
-            Hello, My name is NorHsangPha (Nor-Hsang-Pha), I'm a Computer
-            Science Graduate from Payap University Chiangmai (Thailand). I'm in
-            a rock band as a solo guitarist, songs composer and mixing song in
-            home studio. I like to call myself a developer, I love to develop my
-            skills, knowledge, and my soul with my fast learning skills. Love
-            code, Love cat, Love coffee.
-          </AboutContent>
-        </AboutContentContainer>
-      </AboutPageContainer>
+      <Container>
+        <AboutPageContainer>
+          <Box />
+          <ImageCorouselContainer>
+            <ImageGallery
+              items={images}
+              autoPlay
+              showThumbnails={false}
+              showFullscreenButton={false}
+              showNav={false}
+              showPlayButton={false}
+              showBullets
+            />
+          </ImageCorouselContainer>
+          <AboutContentContainer>
+            <AboutTitle>I me my mind ...</AboutTitle>
+            <AboutContent>
+              Hello, My name is NorHsangPha (Nor-Hsang-Pha), I'm a Computer
+              Science Graduate from Payap University Chiangmai (Thailand). I'm
+              in a rock band as a solo guitarist, songs composer and mixing song
+              in home studio. I like to call myself a developer, I love to
+              develop my skills, knowledge, and my soul with my fast learning
+              skills. Love code, Love cat, Love coffee.
+            </AboutContent>
+            {/* <Box/> */}
+          </AboutContentContainer>
+        </AboutPageContainer>
+      </Container>
     </>
   );
 }

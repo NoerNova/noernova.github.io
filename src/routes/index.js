@@ -15,10 +15,10 @@ function Routes() {
       <Route exact path="/home">
         <Redirect to="/" />
       </Route>
-      <Route exact path="/about" component={About} />
-      <Route exact path="/blogs" component={Blogs} />
-      <Route exact path="/works" component={Works} />
-      <Route exact path="/contact" component={Contact} />
+      <Route path="/about" component={About} />
+      <Route path="/blogs" component={Blogs} />
+      <Route path="/works" component={Works} />
+      <Route path="/contact" component={Contact} />
       <Route component={NotFoundPage} />
     </Switch>
   );
