@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: "normal",
       fontSize: "1.8rem",
       paddingLeft: "1rem",
-      "@media (max-width: 960px)": {
+      "@media (max-width: 760px)": {
         fontSize: "1.5rem",
       },
     },
@@ -62,8 +62,8 @@ const useStyles = makeStyles((theme: Theme) =>
       color: colors.mainFontColors,
       fontFamily: "Helvetica",
       fontSize: "1.2rem",
-      "@media (max-width: 960px)": {
-        fontSize: "1.6rem",
+      "@media (max-width: 600px)": {
+        fontSize: "1.4rem",
         fontFamily: "Kefa",
         padding: 1,
       },
@@ -91,12 +91,12 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "Kefa",
       fontSize: "1.5rem",
       color: `${colors.mainFontColors}`,
-      "@media (min-width: 960px)": {
+      "@media (min-width: 760px)": {
         display: "none",
       },
     },
     socialModalContainer: {
-      "@media (min-width: 960px) and (orientation: landscape)": {
+      "@media (min-width: 760px) and (orientation: landscape)": {
         display: "none",
       },
     },
@@ -171,10 +171,10 @@ function NavBar() {
               n-o-v-a
             </Link>
           </Typography>
-          <Hidden smDown>
+          <Hidden xsDown>
             <NavLinkItems />
           </Hidden>
-          <Hidden mdUp>
+          <Hidden smUp>
             <IconButton
               className={classes.menuButton}
               aria-label="more"

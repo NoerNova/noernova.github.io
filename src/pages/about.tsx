@@ -1,30 +1,62 @@
 import React from "react";
+import { Reset, FullScreen } from "../styles/homeStyle";
 import {
+  Box,
   BackgroundImage,
   ImageCorouselContainer,
-  Image,
+  ImageGalleryContainer,
+  AboutContentContainer,
+  AboutTitle,
+  AboutContent,
+  AboutPageContainer,
 } from "../styles/aboutPageStyle";
 import photoP1 from "../assets/images/me1.jpg";
 import photoP2 from "../assets/images/me2.jpg";
 import photoP3 from "../assets/images/me3.jpg";
-import Carousel from "@brainhubeu/react-carousel";
-import "@brainhubeu/react-carousel/lib/style.css";
 
-const imageRender = () => {
-  let images: Array<string> = [photoP1, photoP2, photoP3];
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
-  return images.map((image) => <Image src={image} />);
-};
+const images = [
+  {
+    original: photoP1,
+  },
+  {
+    original: photoP2,
+  },
+  {
+    original: photoP3,
+  },
+];
 
 function About() {
   return (
     <>
-      <BackgroundImage />
-      <ImageCorouselContainer>
-        <Carousel dots centered autoPlay={5000} animationSpeed={2000} infinite>
-          {imageRender()}
-        </Carousel>
-      </ImageCorouselContainer>
+      <AboutPageContainer>
+        <Box />
+        <ImageCorouselContainer>
+          <ImageGallery
+            items={images}
+            autoPlay
+            showThumbnails={false}
+            showFullscreenButton={false}
+            showNav={false}
+            showPlayButton={false}
+            showBullets
+          />
+        </ImageCorouselContainer>
+        <AboutContentContainer>
+          <AboutTitle>I me my mind ...</AboutTitle>
+          <AboutContent>
+            Hello, My name is NorHsangPha (Nor-Hsang-Pha), I'm a Computer
+            Science Graduate from Payap University Chiangmai (Thailand). I'm in
+            a rock band as a solo guitarist, songs composer and mixing song in
+            home studio. I like to call myself a developer, I love to develop my
+            skills, knowledge, and my soul with my fast learning skills. Love
+            code, Love cat, Love coffee.
+          </AboutContent>
+        </AboutContentContainer>
+      </AboutPageContainer>
     </>
   );
 }
