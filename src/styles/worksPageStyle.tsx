@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import colors from "../themes/colors";
 
-export const AboutPageContainer = styled.div`
-  height: 100%;
+export const FullScreen = styled.div`
+  height: 100vh;
+  width: 100vw;
   background: ${colors.mainBackgroundColor};
+`;
+
+export const WorksPageContainer = styled.div`
+  height: 100%;
+  /* background: green; */
   @media (min-height: 1000px) {
     margin-top: 7rem;
   }
@@ -17,7 +23,7 @@ export const AboutPageContainer = styled.div`
 `;
 
 export const Box = styled.div`
-  background-color: rgb(231, 221, 213);
+  background-color: rgb(186, 195, 199);
   position: absolute;
   top: 6rem;
   height: 85%;
@@ -25,23 +31,29 @@ export const Box = styled.div`
   left: 30%;
   @media (max-width: 720px) {
     position: fixed;
+    width: 65%;
     height: 100%;
+    top: 7rem;
     bottom: 0;
-    left: 10%;
+    left: 4%;
   }
 `;
 
-export const ImageCorouselContainer = styled.div`
+export const CodingImg = styled.img`
+  width: 100%;
+`;
+
+export const ImageContainer = styled.div`
   position: absolute;
   left: 12%;
-  top: 11rem;
+  top: 18rem;
   width: 32%;
   flex-direction: column;
   @media (max-width: 720px) {
     position: relative;
-    left: 0;
+    left: 10%;
     top: 0;
-    width: 100%;
+    width: 80%;
     flex-flow: row;
   }
   @media (min-width: 1400px) {
@@ -49,18 +61,18 @@ export const ImageCorouselContainer = styled.div`
   }
 `;
 
-export const AboutContentContainer = styled.div`
+export const WorksContentContainer = styled.div`
   position: relative;
   justify-content: center;
   margin-bottom: 5rem;
   width: 45%;
   left: 45%;
   @media (max-width: 720px) {
-    position: absolute;
+    /* position: absolute; */
     justify-content: center;
-    margin-top: 1rem;
-    width: 90%;
-    left: 5%;
+    /* margin-top: 1rem; */
+    width: 85%;
+    left: 7%;
   }
   @media (min-width: 721px) {
     left: 50%;
@@ -69,7 +81,7 @@ export const AboutContentContainer = styled.div`
   }
 `;
 
-export const AboutTitle = styled.h2`
+export const WorksTitle = styled.h2`
   font-family: "Kefa";
   font-size: 2rem;
   color: ${colors.mainFontColors};
@@ -79,7 +91,7 @@ export const AboutTitle = styled.h2`
   }
 `;
 
-export const AboutContent = styled.p`
+export const WorksContent = styled.p`
   font-family: "Kefa";
   font-size: 1.3rem;
   color: ${colors.mainFontColors};

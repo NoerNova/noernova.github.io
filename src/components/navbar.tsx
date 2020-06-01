@@ -79,7 +79,8 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     activeNavbar: {
-      color: colors.activeColor,
+      color: colors.mainFontColors,
+      textDecoration: `line-through solid ${colors.activeColor}`,
     },
     modal: {
       display: "flex",

@@ -32,6 +32,7 @@ const images = [
 function About() {
   return (
     <>
+      <Reset />
       <Container>
         <AboutPageContainer>
           <Box />
@@ -56,7 +57,6 @@ function About() {
               develop my skills, knowledge, and my soul with my fast learning
               skills. Love code, Love cat, Love coffee.
             </AboutContent>
-            {/* <Box/> */}
           </AboutContentContainer>
         </AboutPageContainer>
       </Container>
