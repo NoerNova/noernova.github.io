@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import SocialLink from "../components/socialLink";
-import Container from "@material-ui/core/Container";
 import colors from "../themes/colors";
-import { Reset, FullScreen } from "../styles/homeStyle";
+import { Reset } from "../styles/homeStyle";
 
 const ContactPageContainer = styled.div`
   background: ${colors.mainBackgroundColor};
@@ -23,9 +22,14 @@ const SocialContainer = styled.div`
 `;
 
 const ContactContent = styled.h1`
+  padding-top: 5rem;
   font-family: "Kefa";
   font-weight: normal;
   color: ${colors.mainFontColors};
+  @media (max-width: 600px) {
+    font-size: 1.7em;
+    padding-top: 0;
+  }
 `;
 
 function Contact() {

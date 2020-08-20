@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import useStyles from "../styles/pagesStyle";
-import { getContent } from "@mui-treasury/layout";
-import styled from "styled-components";
+import BlogsCard from "../components/blogsCard";
 
-import List from "../components/List";
+import {
+  PageContainer,
+  BlogsCardContainer,
+  CategoryContainer,
+  BlogTitle,
+} from "../styles/blogsPageStyle";
 
-const Content = getContent(styled);
+import { Grid, Typography, Button } from "@material-ui/core";
 
 function Blogs() {
   const styles = useStyles();
@@ -14,7 +18,7 @@ function Blogs() {
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
-    fetch("https://randomuser.me/api/?results=5")
+    fetch("https://randomuser.me/api/?results=6")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -30,32 +34,37 @@ function Blogs() {
 
   const renderItems = () =>
     data.map((item) => (
-      <List
-        key={item.id.value}
-        userAvatar={item.picture.large}
-        firstName={item.name.first}
-        lastName={item.name.last}
-      />
+      <Grid item>
+        <BlogsCard
+          key={item.id.value}
+          userAvatar={item.picture.large}
+          firstName={item.name.first}
+          lastName={item.name.last}
+        />
+      </Grid>
     ));
 
-  return isLoading ? (
-    <Content>
-      <div className={styles.root}>
-        <div className={styles.appHeader}>
-          <h1>Loading...</h1>
-        </div>
-      </div>
-    </Content>
-  ) : (
-    <Content>
-      <div className={styles.root}>
-        <div className={styles.appHeader}>
-          <h1>Project</h1>
-          {renderItems()}
-        </div>
-      </div>
-    </Content>
-  );
+  // return isLoading ? (
+  //   <PageContainer>
+  //     <h1>Loading...</h1>
+  //   </PageContainer>
+  // ) : (
+  //   <PageContainer>
+  //     <CategoryContainer>
+  //       <Button variant="text">Science</Button>
+  //       <Button>Music</Button>
+  //       <Button>Guitar</Button>
+  //       <Button>Computer</Button>
+  //     </CategoryContainer>
+  //     <BlogsCardContainer>
+  //       <Grid container spacing={5}>
+  //         {renderItems()}
+  //       </Grid>
+  //     </BlogsCardContainer>
+  //   </PageContainer>
+  // );
+
+  return <BlogTitle>In development ...</BlogTitle>;
 }
 
 export default Blogs;

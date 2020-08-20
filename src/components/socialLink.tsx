@@ -2,6 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import colors from "../themes/colors";
 
+import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+
 const Social = styled.a`
   font-family: "Kefa";
   font-size: 2rem;
@@ -29,19 +34,19 @@ function SocialLink() {
   return (
     <>
       <Social href="https://www.facebook.com/noe.mtai" target="_blank">
-        f
+        <FacebookIcon />
       </Social>
       <Split>·</Split>
       <Social href="https://www.instagram.com/b.norhsangpha/" target="_blank">
-        ig
+        <InstagramIcon />
       </Social>
       <Split>·</Split>
       <Social href="https://twitter.com/noer_nova" target="_blank">
-        t
+        <TwitterIcon />
       </Social>
       <Split>·</Split>
       <Social href="https://www.linkedin.com/in/norhsangpha/" target="_blank">
-        in
+        <LinkedInIcon />
       </Social>
     </>
   );

@@ -26,10 +26,7 @@ function Home() {
           <SocialLink />
         </SocialContainer>
       </FullScreen>
-      {/* <About />
-      <Blogs />
-      <Works />
-      <Contact /> */}
+      <Contact />
     </>
   );
 }

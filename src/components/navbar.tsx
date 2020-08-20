@@ -81,6 +81,8 @@ const useStyles = makeStyles((theme: Theme) =>
     activeNavbar: {
       color: colors.mainFontColors,
       textDecoration: `line-through solid ${colors.activeColor}`,
+      WebkitTextDecorationLine: "line-through",
+      WebkitTextDecorationColor: `${colors.activeColor}`,
     },
     modal: {
       display: "flex",

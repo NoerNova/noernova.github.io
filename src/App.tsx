@@ -32,9 +32,6 @@ function App() {
         <Root theme={theme} scheme={scheme}>
           <Routes />
           <CssBaseline />
-          <Header>
-            <NavBar />
-          </Header>
         </Root>
       </StylesProvider>
     </div>

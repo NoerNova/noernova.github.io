@@ -1,44 +1,62 @@
 import React from "react";
 import { Reset } from "../styles/homeStyle";
-import {
-  Box,
-  ImageContainer,
-  WorksContentContainer,
-  WorksTitle,
-  WorksContent,
-  WorksPageContainer,
-  CodingImg,
-  FullScreen,
-} from "../styles/worksPageStyle";
 import codingImg from "../assets/images/carbonCode.png";
 import rockerImg from "../assets/images/rocker.png";
+import {
+  WorkPageContainer,
+  Box,
+  SecondBox,
+  CodingImg,
+  RockingImg,
+  WorkContentContainer,
+  SecondWorkContentContainer,
+  WorkContentTitle,
+  WorkContentParagraph,
+} from "../styles/worksPageStyle";
 
 function Works() {
   return (
     <>
       <Reset />
-      <FullScreen>
-        <WorksPageContainer>
-          <Box />
-          <ImageContainer>
-            <CodingImg src={codingImg} />
-          </ImageContainer>
-          <WorksContentContainer>
-            <WorksTitle>Source Code ...</WorksTitle>
-            <WorksContent>
-              Lacus varius incididunt, vulputate nulla ut proin nullam. Quam
-              erat taciti at, posuere sit, mauris sit. Dignissim ante a quis,
-              orci maecenas enim faucibus, mauris vestibulum consectetuer sit
-              ut. Porttitor ac rutrum nam pellentesque. Vitae volutpat feugiat
-              nostrud egestas enim suspendisse, faucibus vel duis vitae voluptas
-              ac, sem metus. Vel ut. Turpis tellus dolor elementum, id eget
-              congue, est luctus vitae mi urna maecenas magna. Arcu scelerisque
-              montes quam maecenas, vehicula libero proin, libero in duis non,
-              velit ut, id consequat.
-            </WorksContent>
-          </WorksContentContainer>
-        </WorksPageContainer>
-      </FullScreen>
+      <WorkPageContainer>
+        {/* <Box />
+        <CodingImg src={codingImg} />
+        <WorkContentContainer>
+          <WorkContentTitle>Source Code</WorkContentTitle>
+          <WorkContentParagraph>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
+            laudantium eum quasi, similique doloremque vitae quos itaque alias
+            reiciendis reprehenderit, nam ullam ad quaerat repudiandae esse!
+            Repudiandae quo ea est.
+          </WorkContentParagraph>
+          <WorkContentParagraph>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
+            laudantium eum quasi, similique doloremque vitae quos itaque alias
+            reiciendis reprehenderit, nam ullam ad quaerat repudiandae esse!
+            Repudiandae quo ea est.
+          </WorkContentParagraph>
+        </WorkContentContainer>
+      </WorkPageContainer>
+      <WorkPageContainer>
+        <SecondBox />
+        <RockingImg src={rockerImg} />
+        <SecondWorkContentContainer>
+          <WorkContentTitle>Let's rock</WorkContentTitle>
+          <WorkContentParagraph>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
+            laudantium eum quasi, similique doloremque vitae quos itaque alias
+            reiciendis reprehenderit, nam ullam ad quaerat repudiandae esse!
+            Repudiandae quo ea est.
+          </WorkContentParagraph>
+          <WorkContentParagraph>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
+            laudantium eum quasi, similique doloremque vitae quos itaque alias
+            reiciendis reprehenderit, nam ullam ad quaerat repudiandae esse!
+            Repudiandae quo ea est.
+          </WorkContentParagraph>
+        </SecondWorkContentContainer> */}
+        <WorkContentTitle>In development ...</WorkContentTitle>
+      </WorkPageContainer>
     </>
   );
 }
