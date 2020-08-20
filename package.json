@@ -2,7 +2,7 @@
   "name": "noernova_portfolio",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/NoerNova/noernova.github.io.git",
+  "homepage": "https://noernova.github.io",
   "dependencies": {
     "@material-ui/core": "^4.9.14",
     "@material-ui/icons": "^4.9.1",
