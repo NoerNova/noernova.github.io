@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'NovaMono';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./NovaMono.ttf');
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./Helvetica.ttc');
+}
+
+@font-face {
+    font-family: 'Kefa';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./Kefa.ttc');
+}
