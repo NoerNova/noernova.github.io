@@ -1,10 +1,16 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 
 function NotFoundPage() {
   return (
     <div style={styles.container}>
-      <Typography variant="h4">404 Error, Page not found</Typography>
+      <div>
+        <Typography variant="h4">404 Error, Page not found</Typography>
+        <Link to="/" style={styles.linkButton}>
+          <Typography variant="h6"> {">/. Back to Home"}</Typography>
+        </Link>
+      </div>
     </div>
   );
 }
@@ -18,6 +24,10 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+  linkButton: {
+    textDecoration: "none",
+    color: "pink",
   },
 };
 
