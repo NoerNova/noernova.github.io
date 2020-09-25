@@ -30,6 +30,7 @@ function App() {
     <div>
       <StylesProvider injectFirst>
         <Root theme={theme} scheme={scheme}>
+          <NavBar />
           <Routes />
           <CssBaseline />
         </Root>

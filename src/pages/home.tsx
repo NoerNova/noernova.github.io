@@ -27,6 +27,9 @@ function Home() {
         </SocialContainer>
       </FullScreen>
       <Contact />
+      <About />
+      <Blogs />
+      <Works />
     </>
   );
 }
