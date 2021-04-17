@@ -119,7 +119,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-function NavBar() {
+function NavBar(): JSX.Element{
   const classes = useStyles();
   const [openModal, setOpenModal] = React.useState(false);
 

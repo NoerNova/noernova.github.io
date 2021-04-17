@@ -32,7 +32,7 @@ const ContactContent = styled.h1`
   }
 `;
 
-function Contact() {
+function Contact(): JSX.Element {
   return (
     <>
       <Reset />

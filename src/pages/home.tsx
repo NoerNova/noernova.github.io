@@ -4,15 +4,14 @@ import {
   FullScreen,
   NameTitleContainer,
   NameTitle,
-  Gradient,
   BackgroundImage,
   Description,
   SocialContainer,
 } from "../styles/homeStyle";
 import SocialLink from "../components/socialLink";
-import { About, Blogs, Works, Contact } from "../pages";
+import { Contact } from "../pages";
 
-function Home() {
+function Home(): React.ReactElement {
   return (
     <>
       <Reset />
@@ -27,9 +26,6 @@ function Home() {
         </SocialContainer>
       </FullScreen>
       <Contact />
-      <About />
-      <Blogs />
-      <Works />
     </>
   );
 }

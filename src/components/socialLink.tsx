@@ -30,7 +30,7 @@ const Split = styled.p`
   }
 `;
 
-function SocialLink() {
+function SocialLink(): JSX.Element {
   return (
     <>
       <Social href="https://www.facebook.com/noe.mtai" target="_blank">

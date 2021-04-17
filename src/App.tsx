@@ -1,9 +1,7 @@
 import React from "react";
 import Routes from "./routes";
-import NavBar from "./components/navbar";
 import { StylesProvider, CssBaseline, createMuiTheme } from "@material-ui/core";
-import Layout, { Root, getHeader } from "@mui-treasury/layout";
-import styled from "styled-components";
+import Layout, { Root }  from "@mui-treasury/layout";
 
 const scheme = Layout();
 
@@ -15,8 +13,6 @@ scheme.configureHeader((builder) => {
   });
 });
 
-const Header = getHeader(styled);
-
 const theme = createMuiTheme({
   palette: {
     background: {
@@ -25,12 +21,11 @@ const theme = createMuiTheme({
   },
 });
 
-function App() {
+function App(): React.ReactElement {
   return (
     <div>
       <StylesProvider injectFirst>
         <Root theme={theme} scheme={scheme}>
-          <NavBar />
           <Routes />
           <CssBaseline />
         </Root>

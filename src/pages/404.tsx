@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 
-function NotFoundPage() {
+function NotFoundPage(): JSX.Element {
   return (
     <div style={styles.container}>
       <div>
