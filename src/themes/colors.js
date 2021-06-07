@@ -4,5 +4,6 @@ export default {
   // mainBackgroundColor:
   //   "linear-gradient(45deg, hsl(0, 0%, 90%), hsl(0, 0%, 96%))",
   activeColor: "#0BADAD",
-  mainFontColors: "#707070",
+  mainFontColors: "#434343",
+  whiteFontColors: "#FFFFFF"
 };
